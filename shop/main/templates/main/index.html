@@ -1,31 +1,12 @@
 {% extends 'main/base.html' %}
-{% load static %}
 
 {% block content %}
-  <nav class="bg-white shadow-lg">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="flex justify-between">
-        <div class="flex space-x-7">
-          <div class="">
-            <a href="#" class="flex items-center px-2 py-4">
-            <img class="h-8 w-8" src="{% static 'main/images/logo.png' %}" alt="logo">
-            <span class="text-gray-500 font-semibold text-xl">Pro Shop</span>
-            </a>
-          </div>
-          <div class="items-center flex space-x-1">
-            <a href="#" class="py-4 px-2 text-gray-500 font-semibold border-b-4 border-green-500">Home</a>
-            <a href="#" class="py-4 px-2 text-gray-500 font-semibold">About</a>
-            <a href="#" class="py-4 px-2 text-gray-500 font-semibold">Contacts</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
 
   <h4>
     {% for product in products %}
       <a href="{% url 'main:phones' product.id %}">
       ID: {{ product.id }} | Имя: {{ product.name }} | Цена: {{ product.price }} | Описание:{{ product.description }} <br>
+        <img src="{{ product.image.url }}" alt="">
       </a>
     {% endfor %}
   </h4>
