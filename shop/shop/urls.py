@@ -9,6 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # http://127.0.0.1:8000/
     path('', include('main.urls', namespace='main')),
+    path('users/', include('users.urls', namespace='users')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
