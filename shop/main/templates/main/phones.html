@@ -3,11 +3,13 @@
 
 {% block content %}
   <div class="flex p-10 w-full h-200">
-    <img class="w-1/3 " src="{{ phones.image.url }}" alt="PhonePhoto">
+    <img class="w-1/3 " src="{{ phone.image.url }}" alt="PhonePhoto">
     <div class="w-2/3 text-xl ml-10 mt-5">
-      <p class="mt-5"> {{ phones.name }}</p>
-      <p class="mt-5 text-green-500"> $ {{ phones.price | intcomma }}</p>
-      <p class="mt-5 text-gray-600"> {{ phones.description }}</p>
+      <p class="mt-5"> {{ phone.name }}</p>
+      <p class="mt-5 text-green-500"> $ {{ phone.price | intcomma }}</p>
+      <p class="mt-5 text-gray-600"> {{ phone.description }}</p>
+      <button class="bg-green-600 text-white mt-[50px]"><a href="{% url 'main:UpdatePhone' phone.id %}">Update Item</a></button>
+      <button class="bg-red-600 text-white mt-[50px]"><a href="{% url 'main:DeletePhone' phone.id %}">Delete Item</a></button>
     </div>
   </div>
 {% endblock %}

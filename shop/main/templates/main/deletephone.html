@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  <h1 class="text-2xl m-10 font-bold"> Delete Phone</h1>
+  <form class="bg-white shadow-md m-10 w-3/5 rounded px-8 pt-6 pb-8 mb-4" method="post">
+  {% csrf_token %}
+  <div class="mb-4">
+    <label class="block text-gray text-sm font mb-2" for=""> Are you sure want to delete this phone?</label>
+    <label class="block text-gray text-sm font mb-2" for=""> {{ phone.name }}</label>
+    <img class="w-70 h-70" src="{{ phone.image.url }}" alt="">
+  </div>
+  <input class="bg-red-500 text-white px-5 py-2" type="submit" value="Confirm">
+  <a class="button bg-green-500 text-white px-5 py-3" href="{% url 'main:index' %}">Cancel</a>
+</form>
+{% endblock %}
