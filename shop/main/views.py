@@ -59,8 +59,9 @@ def DeletePhone(request, id):
     if request.method == 'POST':
         phone.delete()
         return redirect('/')
-
     context = {
         'phone': phone
     }
     return render(request, 'main/deletephone.html', context)
+
+
