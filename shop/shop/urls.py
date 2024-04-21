@@ -9,6 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # http://127.0.0.1:8000/
     path('', include('main.urls', namespace='main')),
+    # http://127.0.0.1:8000/users
     path('users/', include('users.urls', namespace='users')),
 ]
 
