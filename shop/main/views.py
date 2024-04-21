@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import DeleteView
 
 from .models import Product
 
@@ -73,3 +75,9 @@ def DeletePhone(request, id):
         'phone': phone
     }
     return render(request, 'main/deletephone.html', context)
+
+
+class ProductDeleteView(DeleteView):
+    model = Product
+    success_url = reverse_lazy('main:index')
+

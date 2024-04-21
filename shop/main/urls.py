@@ -1,7 +1,7 @@
 from django.urls import path
 
 from . import views
-from .views import ProductListView, ProductPhoneView
+from .views import ProductListView, ProductPhoneView, ProductDeleteView
 
 app_name = 'main'
 
@@ -18,7 +18,7 @@ urlpatterns = [
     path('updatephone/<int:id>/', views.UpdatePhone, name='UpdatePhone'),
 
     # http://127.0.0.1:8000/deletephone/*id
-    path('deletephone/<int:id>/', views.DeletePhone, name='DeletePhone'),
+    path('deletephone/<int:pk>/', ProductDeleteView.as_view(), name='DeletePhone'),
 
 
 ]
