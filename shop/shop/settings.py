@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -93,4 +94,7 @@ MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'main:index'
 LOGIN_URL = 'users:login'
-LOGOUT_REDIRECT_URL = 'main:index'
+# LOGOUT_REDIRECT_URL = 'main:index'
+
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51P8Nf6GmLYKaNejESKkQbcqSmAusicsetWy3xHT4iDYY4BMXRP5Pb8zzm8GsecIwLqo4ic2r8R7xF8Byr5bdOXQd00y2VRAdTN'
+STRIPE_SECRET_KEY = 'sk_test_51P8Nf6GmLYKaNejEV8Nfm3iLIrmH7DP0fHN3nHsV601qtyrVBnYrRUzcoVC54JCTCADjrTXMjXYriu2JHbCphhLc009tegVUiK'

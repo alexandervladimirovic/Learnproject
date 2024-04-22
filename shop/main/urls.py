@@ -18,7 +18,13 @@ urlpatterns = [
     path('updatephone/<int:id>/', views.UpdatePhone, name='UpdatePhone'),
 
     # http://127.0.0.1:8000/deletephone/*id
-    path('deletephone/<int:pk>/', ProductDeleteView.as_view(), name='DeletePhone'),
+    path('deletephone/<int:id>/', views.DeletePhone, name='DeletePhone'),
+
+    path('success/',views.PaymentSuccessView.as_view(), name='success'),
+
+    path('failed/', views.PaymentFailedView.as_view(), name='failed'),
+
+    path('api/checkout-session/<int:id>/', views.create_checkout_session, name='api_checkout_session'),
 
 
 ]

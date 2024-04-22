@@ -7,5 +7,10 @@ class Profile(models.Model):
     image = models.ImageField(blank=True, upload_to='_profile_images')
     contact_number = models.CharField(max_length=50, default='+79123456789')
 
+    class Meta:
+        verbose_name = 'Профиль'
+        verbose_name_plural = 'Профили'
+
+
     def __str__(self):
         return self.user.username
